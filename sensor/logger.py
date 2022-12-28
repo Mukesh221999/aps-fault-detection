@@ -5,10 +5,10 @@ import os
 from datetime import datetime
 
 #log file name
-LOG_FILE_NAME = f"{datetime().now().strftime('%m%d%Y__%H%M%S')}.log"
+LOG_FILE_NAME = f"{datetime.now().strftime('%m%d%Y__%H%M%S')}.log"
 
 #log directory
-LOG_FILE_DIR = ps.path.join(os.getcwd(),"logs")
+LOG_FILE_DIR = os.path.join(os.getcwd(),"logs")
 
 
 #create folder if not available
