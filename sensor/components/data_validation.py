@@ -8,6 +8,7 @@ import pandas as pd
 from sensor import utils
 import numpy as np  
 from sensor import utils
+from sensor.config import TARGET_COLUMN
 
 class DataValidation:
     
@@ -135,7 +136,7 @@ class DataValidation:
             logging.info(f"Is all required columns present in test df")
             test_df_columns_status=self.is_required_columns_exists(base_df=base_df, current_df=test_df,report_key_name="missing_columns_within_test_dataset")
             
-            exclude_columns = ["class"]
+            exclude_columns = [TARGET_COLUMN]
             base_df = utils.convert_columns_float(df=base_df, exclude_columns=exclude_columns)
             train_df = utils.convert_columns_float(df=train_df, exclude_columns=exclude_columns)
             test_df = utils.convert_columns_float(df=test_df, exclude_columns=exclude_columns)
